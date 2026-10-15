@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yumochi ♡ acessórios fofinhos</title>
+<meta name="description" content="Acessórios fofinhos feitos à mão pela Yumochi. Personalize seu mimo!">
+<style>
+:root{--pink:#f7dce7;--pink2:#fff1f6;--rose:#bd7895;--ink:#55444c;--muted:#8c7b83;--white:#fffdfd;--line:#eedde4;--mint:#e7f3ee}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:ui-rounded,"Nunito",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{color:var(--rose)}
+header{padding:18px 20px;border-bottom:1px solid var(--line);background:#fffdfd;position:sticky;top:0;z-index:5}
+.nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:1.35rem;font-weight:850;letter-spacing:.04em;color:var(--rose)}
+.brand small{display:block;font-size:.68rem;letter-spacing:.13em;font-weight:600;color:var(--muted)}
+nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem}
+nav a{text-decoration:none;color:var(--ink)}
+main{max-width:1050px;margin:auto;padding:0 20px}
+.hero{padding:54px 0 38px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--rose);font-weight:800}
+h1{font-size:clamp(2.3rem,5vw,4.2rem);line-height:1.05;margin:12px 0 18px;letter-spacing:-.045em}
+h2{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.15;margin:0 0 10px;letter-spacing:-.025em}
+h3{margin:0 0 6px}
+p{margin-top:0}
+.lead{font-size:1.05rem;color:var(--muted);max-width:540px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:var(--rose);color:white;text-decoration:none;padding:12px 18px;font:inherit;font-weight:750;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.secondary{background:var(--pink2);color:var(--rose);border:1px solid var(--line)}
+.hero-art{min-height:260px;border-radius:32px;background:var(--pink2);display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid var(--line)}
+.bunny{font-size:7rem;filter:drop-shadow(0 7px 0 #f0d3df)}
+.sparkle{position:absolute;color:var(--rose);font-size:1.5rem}
+.section{padding:36px 0}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:20px}
+.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:white;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 5px 18px #6e46580a}
+.product-art{height:120px;border-radius:16px;background:var(--pink2);display:grid;place-items:center;font-size:3.5rem;margin-bottom:14px}
+.tag{display:inline-block;font-size:.72rem;background:var(--mint);padding:4px 9px;border-radius:99px;color:#55796a;margin-bottom:8px}
+.price{font-weight:850;color:var(--rose);margin:8px 0 12px}
+.builder{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px}
+.option-list{display:grid;gap:10px}
+.option{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:17px;padding:13px;cursor:pointer}
+.option:has(input:checked){border-color:var(--rose);background:var(--pink2)}
+.option input{margin-top:5px;accent-color:var(--rose)}
+.option strong{display:block}
+.option small{display:block;color:var(--muted);margin-top:2px}
+label{display:block;font-size:.9rem;font-weight:750;margin:14px 0 6px}
+input[type=text],input[type=url],select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#fffdfd;color:var(--ink);font:inherit}
+textarea{min-height:78px;resize:vertical}
+.pixels-wrap{display:grid;grid-template-columns:1fr;gap:12px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.tools button,.swatch{border:1px solid var(--line);background:white;color:var(--ink);border-radius:10px;padding:8px 11px;font:inherit;cursor:pointer}
+.tools button.active{background:var(--pink);border-color:var(--rose)}
+#pixelGrid{display:grid;grid-template-columns:repeat(16,1fr);width:min(100%,390px);aspect-ratio:1;border:1px solid #e5d6dd;border-radius:8px;overflow:hidden;touch-action:manipulation}
+.pixel{border:1px solid #f2e8ed;background:#fff;aspect-ratio:1;min-width:0;padding:0}
+.palette{display:flex;gap:7px;flex-wrap:wrap}
+.swatch{width:29px;height:29px;padding:0;border-radius:50%}
+.swatch.active{outline:2px solid var(--ink);outline-offset:2px}
+.reference{background:var(--pink2);border-radius:17px;padding:15px;margin-top:12px}
+.reference-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.combo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.combo{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:white}
+.combo-visual{min-height:135px;background:var(--pink2);display:grid;place-items:center;font-size:2.5rem;padding:12px}
+.combo-body{padding:16px}
+.combo-body p{font-size:.9rem;color:var(--muted);margin:6px 0}
+.combo .price{margin-bottom:12px}
+.badge{font-size:.7rem;letter-spacing:.04em;border-radius:99px;background:#fff;border:1px solid var(--line);padding:4px 8px;color:var(--rose);display:inline-block;margin-bottom:8px}
+.note{font-size:.85rem;color:var(--muted)}
+footer{margin-top:30px;background:var(--pink2);padding:28px 20px;text-align:center;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+@media(max-width:760px){.hero,.builder{grid-template-columns:1fr}.hero{padding-top:35px}.hero-art{min-height:190px}.cards,.combo-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}nav{gap:10px;font-size:.82rem}.nav{align-items:flex-start}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a class="brand" href="#" style="text-decoration:none">yumochi ♡<small>ACESSÓRIOS & MIMOS FEITOS À MÃO</small></a>
+  <nav><a href="#produtos">Produtos</a><a href="#combos">Combos</a><a href="#personalizar">Personalizar</a></nav>
+</div></header>
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">pequenos mimos, muito amor</div>
+    <h1>Um pedacinho de fofura feito pra você.</h1>
+    <p class="lead">Chaveiros, charms e pixel arts feitos à mão — escolha um modelinho, monte seu combo ou crie algo só seu. ♡</p>
+    <a class="btn" href="#personalizar">Montar meu mimo</a>
+    <a class="btn secondary" href="#combos" style="margin-left:6px">Ver combos</a>
+  </div>
+  <div class="hero-art" aria-label="Ilustração decorativa de coelhinho">
+    <span class="sparkle" style="top:25px;left:28px">✧</span><span class="sparkle" style="right:30px;top:45px">♡</span><span class="bunny">🐰</span><span class="sparkle" style="bottom:25px;right:42px">✦</span>
+  </div>
+</section>
+
+<section class="section" id="produtos">
+  <div class="section-head"><div><div class="eyebrow">feito com carinho</div><h2>Escolha seu mimo</h2></div><p class="muted">Os valores são exemplos editáveis — confirme o preço final pelo WhatsApp.</p></div>
+  <div class="cards">
+    <article class="card"><div class="product-art">🧸</div><span class="tag">feito à mão</span><h3>Chaveiro pixel art</h3><p class="muted">Seu personagem, bichinho ou desenho favorito em Hama Beads.</p><div class="price">a partir de R$ 8</div><button class="btn secondary" onclick="chooseProduct('Chaveiro pixel art')">Personalizar</button></article>
+    <article class="card"><div class="product-art">💗</div><span class="tag">fofurinha</span><h3>Charm mini</h3><p class="muted">Corações, estrelas, florzinhas e outros detalhes para pendurar.</p><div class="price">a partir de R$ 3</div><button class="btn secondary" onclick="chooseProduct('Charm mini')">Personalizar</button></article>
+    <article class="card"><div class="product-art">🌷</div><span class="tag">decoração</span><h3>Ímã de geladeira</h3><p class="muted">Uma mini pixel art para deixar seu cantinho mais fofo.</p><div class="price">a partir de R$ 6</div><button class="btn secondary" onclick="chooseProduct('Ímã de geladeira')">Personalizar</button></article>
+  </div>
+</section>
+
+<section class="section" id="combos">
+  <div class="section-head"><div><div class="eyebrow">juntinhos ficam mais fofos</div><h2>Combos Yumochi</h2><p class="muted">Monte um chaveiro principal com mini charms combinando! Os combos abaixo são ideias de exemplo.</p></div></div>
+  <div class="combo-grid">
+    <article class="combo">
+      <div class="combo-visual">💜 🎀 💗</div>
+      <div class="combo-body"><span class="badge">combo queridinho</span><h3>Combo Kuromi vibes</h3><p>1 chaveiro de personagem estilo pixel art + 1 mini coração + 1 charm de estrela.</p><div class="price">sugestão: R$ 13–16</div><button class="btn" onclick="chooseCombo('Combo Kuromi vibes','Chaveiro principal + mini coração + estrela')">Quero esse combo</button></div>
+    </article>
+    <article class="combo">
+      <div class="combo-visual">🐰 🌸 🤍</div>
+      <div class="combo-body"><span class="badge">delicado</span><h3>Combo coelhinho</h3><p>1 chaveiro de coelhinho + 1 florzinha + 1 mini coração em tons pastel.</p><div class="price">sugestão: R$ 12–15</div><button class="btn" onclick="chooseCombo('Combo coelhinho','Chaveiro coelhinho + florzinha + mini coração')">Quero esse combo</button></div>
+    </article>
+    <article class="combo">
+      <div class="combo-visual">🩷 ⭐ 🫧</div>
+      <div class="combo-body"><span class="badge">monte sua paleta</span><h3>Combo céu pastel</h3><p>1 chaveiro pixel art personalizado + 2 charms mini à sua escolha.</p><div class="price">sugestão: R$ 12–17</div><button class="btn" onclick="chooseCombo('Combo céu pastel','Chaveiro personalizado + 2 charms mini à escolha')">Montar esse combo</button></div>
+    </article>
+  </div>
+  <p class="note" style="margin-top:12px">♡ Os preços são apenas sugestões iniciais para você editar conforme material, tamanho e tempo de produção. Personagens protegidos por direitos autorais podem ser feitos apenas conforme as regras aplicáveis à sua loja.</p>
+</section>
+
+<section class="section" id="personalizar">
+  <div class="section-head"><div><div class="eyebrow">do seu jeitinho</div><h2>Crie ou personalize seu pedido</h2><p class="muted">Você pode escolher um modelo, desenhar pixel por pixel ou mandar uma referência para conversar sobre a encomenda.</p></div></div>
+  <div class="builder">
+    <div class="panel">
+      <h3>1. O que vamos criar?</h3>
+      <div class="option-list">
+        <label class="option"><input type="radio" name="modo" value="Modelo pronto" checked><span><strong>Modelos prontos</strong><small>Escolha uma ideia e conte como quer adaptar.</small></span></label>
+        <label class="option"><input type="radio" name="modo" value="Editor pixel art"><span><strong>Editor de pixel art</strong><small>Desenhe uma ideia simples na grade.</small></span></label>
+        <label class="option"><input type="radio" name="modo" value="Referência externa"><span><strong>Pesquisar uma referência</strong><small>Procure no Google ou Pinterest e envie o link ou a imagem no WhatsApp.</small></span></label>
+      </div>
+      <label for="product">Produto</label>
+      <select id="product"><option>Chaveiro pixel art</option><option>Charm mini</option><option>Ímã de geladeira</option><option>Combo personalizado</option></select>
+      <label for="combo">Combo (opcional)</label>
+      <select id="combo"><option value="">Sem combo / ainda vou decidir</option><option>Combo Kuromi vibes</option><option>Combo coelhinho</option><option>Combo céu pastel</option><option>Combo personalizado</option></select>
+      <label for="character">Personagem, tema ou ideia</label>
+      <input id="character" type="text" placeholder="Ex.: Kuromi, gatinho, coração rosa...">
+      <label for="colors">Cores principais</label>
+      <input id="colors" type="text" placeholder="Ex.: lilás, preto e rosa pastel">
+      <label for="hardware">Argola / ferragem (se for chaveiro)</label>
+      <select id="hardware"><option>Argola simples</option><option>Corrente de bolinhas</option><option>Mosquetão</option><option>Ainda não sei</option></select>
+      <label for="charms">Charms extras do combo</label>
+      <input id="charms" type="text" placeholder="Ex.: mini coração + estrela + laço">
+      <label for="referenceLink">Link de referência (opcional)</label>
+      <input id="referenceLink" type="url" placeholder="Cole aqui um link do Pinterest/Google/imagem">
+      <label for="notes">Detalhes do pedido</label>
+      <textarea id="notes" placeholder="Tamanho, nome, combinação dos charms, alguma ideia especial..."></textarea>
+      <hr>
+      <button class="btn" style="width:100%" onclick="sendOrder()">Enviar pedido pelo WhatsApp ♡</button>
+      <p class="note" style="margin:10px 0 0">O botão abre uma conversa com o resumo do pedido. Se quiser mandar uma imagem, baixe/guarde a referência e anexe manualmente no WhatsApp.</p>
+    </div>
+
+    <div class="panel">
+      <h3>2. Escolha como criar</h3>
+      <div id="editorArea" class="pixels-wrap">
+        <p class="muted">No editor, selecione uma cor e toque nos quadradinhos para desenhar.</p>
+        <div class="tools"><button class="active" id="drawBtn" onclick="setTool('draw')">✎ Desenhar</button><button id="eraseBtn" onclick="setTool('erase')">⌫ Apagar</button><button onclick="clearGrid()">Limpar</button><button onclick="sampleArt()">Exemplo fofo</button><button onclick="downloadArt()">Salvar PNG</button></div>
+        <div class="palette" id="palette"></div>
+        <div id="pixelGrid" aria-label="Editor de pixel art 16 por 16"></div>
+        <p class="note">O desenho serve como referência visual; o resultado final depende do tamanho e das cores disponíveis em Hama Beads.</p>
+      </div>
+      <div class="reference" id="referenceArea">
+        <h3>3. Pesquisar uma referência ♡</h3>
+        <p class="muted">Digite o personagem ou a ideia que você quer e pesquise em outra aba.</p>
+        <label for="searchTerm">O que você quer procurar?</label>
+        <input id="searchTerm" type="text" placeholder="Ex.: Kuromi pixel art">
+        <div class="reference-buttons">
+          <button class="btn secondary" onclick="searchReference('google')">Pesquisar no Google</button>
+          <button class="btn secondary" onclick="searchReference('pinterest')">Pesquisar no Pinterest</button>
+        </div>
+        <p class="note" style="margin:10px 0 0">Depois, copie o link da referência para o campo acima ou salve a imagem e anexe no WhatsApp. O site não copia nem envia imagens automaticamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div style="font-size:1.4rem;color:var(--rose);font-weight:850">yumochi ♡</div>
+  <p>Pequenos detalhes, grandes fofuras.</p>
+  <p>Instagram: <strong>@SEUINSTAGRAM</strong> · WhatsApp: configure o número no código</p>
+  <p class="note">Feito com carinho. Os pedidos e valores são confirmados manualmente.</p>
+</footer>
+<script>
+const colors=['#ffffff','#19151c','#6e3d8f','#b28bd4','#f3a8c7','#f6d6e5','#f5c94e','#7dbf9a','#79b9e8','#ed786f','#b9a39a','#55444c'];
+let chosenColor=colors[4], tool='draw', drawing=false;
+const grid=document.getElementById('pixelGrid'), palette=document.getElementById('palette');
+function makePalette(){colors.forEach(c=>{const b=document.createElement('button');b.className='swatch'+(c===chosenColor?' active':'');b.style.background=c;b.title=c;b.onclick=()=>{chosenColor=c;document.querySelectorAll('.swatch').forEach(s=>s.classList.toggle('active',s===b));};palette.appendChild(b);});}
+function paintCell(cell){cell.style.background=tool==='erase'?'#ffffff':chosenColor;cell.dataset.color=tool==='erase'?'#ffffff':chosenColor;}
+function makeGrid(){for(let i=0;i<256;i++){const cell=document.createElement('button');cell.className='pixel';cell.type='button';cell.dataset.color='#ffffff';cell.setAttribute('aria-label','pixel '+(i+1));cell.addEventListener('pointerdown',e=>{e.preventDefault();drawing=true;paintCell(cell);});cell.addEventListener('pointerenter',()=>{if(drawing)paintCell(cell)});grid.appendChild(cell);}document.addEventListener('pointerup',()=>drawing=false);}
+function setTool(t){tool=t;document.getElementById('drawBtn').classList.toggle('active',t==='draw');document.getElementById('eraseBtn').classList.toggle('active',t==='erase');}
+function clearGrid(){grid.querySelectorAll('.pixel').forEach(c=>{c.style.background='#fff';c.dataset.color='#ffffff';});}
+function sampleArt(){clearGrid();const cells=[...grid.children];const heart=[[5,3],[6,2],[7,2],[8,3],[9,2],[10,2],[11,3],[4,4],[5,4],[6,4],[7,4],[8,4],[9,4],[10,4],[11,4],[12,4],[5,5],[6,5],[7,5],[8,5],[9,5],[10,5],[11,5],[6,6],[7,6],[8,6],[9,6],[10,6],[7,7],[8,7],[9,7],[8,8]];heart.forEach(([x,y])=>{let c=cells[y*16+x];c.style.background='#f3a8c7';c.dataset.color='#f3a8c7';});}
+function downloadArt(){const scale=20,canvas=document.createElement('canvas');canvas.width=canvas.height=320;const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,320,320);[...grid.children].forEach((c,i)=>{ctx.fillStyle=c.dataset.color||'#fff';ctx.fillRect((i%16)*scale,Math.floor(i/16)*scale,scale,scale);});const a=document.createElement('a');a.download='yumochi-pixel-art.png';a.href=canvas.toDataURL('image/png');a.click();}
+function searchReference(where){const term=document.getElementById('searchTerm').value.trim()||document.getElementById('character').value.trim()||'pixel art fofo';const q=encodeURIComponent(term+' pixel art');const url=where==='pinterest'?'https://www.pinterest.com/search/pins/?q='+q:'https://www.google.com/search?tbm=isch&q='+q;window.open(url,'_blank','noopener');}
+function chooseProduct(name){document.getElementById('product').value=name;document.getElementById('personalizar').scrollIntoView({behavior:'smooth'});}
+function chooseCombo(name,details){document.getElementById('product').value='Combo personalizado';document.getElementById('combo').value=name;document.getElementById('charms').value=details;document.getElementById('notes').value='Quero este combo como base, com possibilidade de ajustar as cores e detalhes.';document.getElementById('personalizar').scrollIntoView({behavior:'smooth'});}
+function sendOrder(){const mode=document.querySelector('input[name="modo"]:checked').value;const fields=[['Tipo de criação',mode],['Produto',document.getElementById('product').value],['Combo',document.getElementById('combo').value||'Não definido'],['Personagem/tema',document.getElementById('character').value||'A combinar'],['Cores',document.getElementById('colors').value||'A combinar'],['Ferragem',document.getElementById('hardware').value],['Charms extras',document.getElementById('charms').value||'Não informado'],['Referência',document.getElementById('referenceLink').value||'Sem link'],['Detalhes',document.getElementById('notes').value||'Sem observações']];const msg='Oi, Yumochi! ♡ Quero fazer um pedido:\\n\\n'+fields.map(([k,v])=>k+': '+v).join('\\n')+'\\n\\nPodem me passar o valor final e o prazo?';const phone='COLOQUESEUNUMEROAQUI';if(phone==='COLOQUESEUNUMEROAQUI'){alert('Antes de publicar, configure seu número de WhatsApp no código do site. Procure COLOQUESEUNUMEROAQUI e troque pelo número com DDI e DDD, só números.');return;}window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(msg),'_blank','noopener');}
+makePalette();makeGrid();
+</script>
+</body>
+</html>
